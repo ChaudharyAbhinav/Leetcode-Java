@@ -1,0 +1,30 @@
+```
+class Solution {
+    public boolean isValid(String s) {
+       
+        Stack<Character> helper = new Stack();
+        
+        for(char ch: s.toCharArray()){
+            //if same
+            
+                if(ch == '{'){
+                    helper.push('}');
+                }else if(ch=='['){
+                    helper.push(']');
+                }else if(ch=='('){
+                    helper.push(')');
+                }else if(helper.isEmpty())
+                    return false;
+                else if (helper.pop()!=ch) 
+                    return false;
+      
+        }
+
+        return helper.isEmpty() ;
+ 
+    }
+}
+
+```
+Time COmmplexity : 2O(n)  -> O(n)
+Space COmplexity : O(n)
